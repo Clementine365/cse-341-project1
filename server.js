@@ -2,9 +2,14 @@ const express = require('express');
 
 // Correct the path to the 'database' module
 const mongodb = require('./data/database');  // Fixed path
+const mongoose = require('mongoose');
+
 const app = express();
 
 const port = process.env.PORT || 3000;
+
+
+
 
 // Use the router from routes.js
 app.use('/', require('./routes'));
