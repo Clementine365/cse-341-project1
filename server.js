@@ -1,18 +1,28 @@
 const express = require('express');
-
+const bodyParser =require('body-parser')
 // Correct the path to the 'database' module
 const mongodb = require('./data/database');  // Fixed path
 const mongoose = require('mongoose');
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 
 
-
+app.use(bodyParser.json());
+app.use((req, res, next) => {
+    res.setHeader('Accee-Control-Allow-Origin', '"');
+    res.setHeader(
+        'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-type, Accept,Z-Key'
+    );
+    res.setHeader('Acces-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+})
 // Use the router from routes.js
 app.use('/', require('./routes'));
+
+
 
 mongodb.initdb((err) => {
     if(err){
@@ -24,3 +34,6 @@ mongodb.initdb((err) => {
         });
     }
 });
+
+
+

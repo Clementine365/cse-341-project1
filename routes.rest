@@ -1,0 +1,38 @@
+http://localhost:3000/users
+
+### get users by id
+GET http://localhost:3000/users
+
+
+### create users 
+POST http://localhost:3000/users 
+
+Content-Type: application/json
+{
+  
+"email": "TSTa@aaa.com",
+  "username": "anna",
+  "name": "hello i love this app",
+  "ipaddress": "94.121.163.63"   
+
+}
+
+
+
+
+### put contact
+PUT http://localhost:3000/users/67d541a5402a40cdfad707bb
+
+Content-Type: application/json
+{
+  
+    "email":"clemen@aaaa.com",
+    "username":"tesanow@aaa.com",
+    "name":"hello you  now there",
+    "ipaddress":"94.121.163.63"
+}
+
+
+
+### delete
+DELETE http://localhost:3000/users/67d53e898fed4582af299e7b
