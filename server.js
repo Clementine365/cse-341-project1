@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser =require('body-parser')
-// Correct the path to the 'database' module
+const cors = require('cors');
 const mongodb = require('./data/database');  // Fixed path
 const mongoose = require('mongoose');
 
