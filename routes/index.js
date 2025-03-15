@@ -9,4 +9,14 @@ router.get('/', (req, res) => {
 
  router.use('/users',require('./users'));
  
+
+// Define the route for GET /users
+router.get('/users', (req, res) => {
+    // Example response - you can replace this with actual database query
+    res.json({ message: 'Users route is working!' });
+});
+
+
+
+ 
  module.exports = router;
