@@ -8,8 +8,9 @@ const app = express();
 
 const port = process.env.PORT || 3001;
 
-app.use(cors());
-
+app.use(cors({
+    origin: 'https://yourfrontend.com'
+  }));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
     res.setHeader('Accee-Control-Allow-Origin', '"');
